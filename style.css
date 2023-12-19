@@ -1,0 +1,164 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+    --board-width: 35vw;
+    --header-width: 80vw;
+
+    --background-color: #e2e2e2;
+    --square-color: #c1c1c1;
+    --boat-color: #crgb(172, 250, 254)
+    --missHit-color: grey;
+
+    font-family: 'Nunito', sans-serif;
+
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
+
+.container {
+
+    background-color: #cccccc;
+
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+
+    
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr var(--board-width) 1fr var(--board-width) 1fr;
+    grid-template-rows: var(--board-width);
+}
+
+.gap {
+    background-color: var(--background-color);
+
+}
+
+.player-left {
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    ;
+    grid-template-rows: repeat(10, 1fr);
+    gap: 0.1rem;
+}
+
+.player-right {
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    ;
+    grid-template-rows: repeat(10, 1fr);
+    gap: 0.1rem;
+
+}
+
+.square {
+    background-color: var(--square-color);
+}
+
+.boat {
+    background-color: var(--boat-color);
+
+}
+
+
+
+.square[data-hit="true"]{
+    background-color: goldenrod;
+}
+
+.square[data-boat=true][data-hit=true] {
+    background-color: red;
+}
+
+.reveal {
+    background-color: greenyellow;
+
+}
+
+.text {
+
+    background-color: #cccccc;
+
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    
+
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr var(--board-width) 1fr var(--board-width) 1fr;
+    grid-template-rows: auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--header-width);
+
+
+}
+
+.play {
+    margin-top: 0;
+    margin-right: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: var(--background-color);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.title {
+    
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.player-right .disabledbutton {
+    pointer-events: none;
+}
+
+.disabledbutton {
+    pointer-events: none;
+}
+
+
+.gap {
+writing-mode: vertical-lr; /* vertical right-to-left */
+text-orientation: unset; /* optional: for supporting browsers */
+white-space: nowrap; /* optional: prevent wrapping */
+}
+
+.text-left {
+    padding-left: 1rem;
+}
+
+.text-right {
+    padding-left: 1rem;
+}
+
+
